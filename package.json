@@ -1,0 +1,29 @@
+{
+  "name": "Anote-API",
+  "version": "1.0.0",
+  "description": "API REST para anotações de livros",
+  "main": "index.js",
+  "scripts": {
+    "migrate": "npx sequelize-cli db:migrate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brian-izaki/Anote-API.git"
+  },
+  "keywords": [],
+  "author": "Brian Izaki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brian-izaki/Anote-API/issues"
+  },
+  "homepage": "https://github.com/brian-izaki/Anote-API#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.4.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
+  }
+}
