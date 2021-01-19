@@ -1,2 +1,2 @@
-# study_notes-API
-API REST para anotações de estudos
+# Anote API
+API REST para anotações de livros
