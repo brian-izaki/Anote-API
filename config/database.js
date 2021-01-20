@@ -2,8 +2,8 @@ module.exports = {
   development: {
     username: "brian",
     password: 1234,
-    database: "database_development",
-    host: "127.0.0.1",
+    database: "anote",
+    host: "localhost",
     dialect: "postgres",
   },
   test: {
