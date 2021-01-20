@@ -7,5 +7,5 @@ services:
     environment:
       POSTGRES_PASSWORD: 1234
       POSTGRES_USER: brian
-    port: 
+    ports: 
       - 5432:5432
