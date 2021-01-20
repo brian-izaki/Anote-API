@@ -1,5 +1,5 @@
 {
-  "name": "Anote-API",
+  "name": "anote-api",
   "version": "1.0.0",
   "description": "API REST para anotações de livros",
   "main": "index.js",
