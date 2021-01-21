@@ -6,6 +6,6 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: 1234
-      POSTGRES_USER: brian
+      POSTGRES_USER: anote
     ports: 
       - 5432:5432
