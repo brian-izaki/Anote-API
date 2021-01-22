@@ -1,6 +1,5 @@
 "use strict";
 const { Model, DataTypes } = require("sequelize");
-const { all } = require("sequelize/types/lib/operators");
 const sequelize = require("../factory/sequelize");
 
 class User extends Model {
