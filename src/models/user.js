@@ -13,8 +13,8 @@ class User extends Model {
     // define association here
   }
 
-  static isPassword(pass, encodedPass) {
-    bcrypt.compare(pass, encodedPass, (err, result) => {
+  static async isPassword(pass, encodedPass) {
+    return await bcrypt.compare(pass, encodedPass, (err, result) => {
       return result;
     });
   }
