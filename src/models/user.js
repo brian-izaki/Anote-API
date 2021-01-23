@@ -1,6 +1,7 @@
 "use strict";
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../factory/sequelize");
+const bcrypt = require("bcrypt");
 
 class User extends Model {
   /**
@@ -11,10 +12,16 @@ class User extends Model {
   static associate(models) {
     // define association here
   }
+
+  static isPassword(pass, encodedPass) {
+    bcrypt.compare(pass, encodedPass, (err, result) => {
+      return result;
+    });
+  }
 }
 User.init(
   {
-    name: {
+    username: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -22,18 +29,25 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true
-      }
+        notEmpty: true,
+      },
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true
-      }
+        notEmpty: true,
+      },
     },
   },
   {
+    hooks: {
+      beforeCreate: (user) => {
+        const salt = bcrypt.genSaltSync(10);
+        const hash = bcrypt.hashSync(user.password, salt);
+        user.password = hash;
+      },
+    },
     sequelize,
     modelName: "User",
   }
