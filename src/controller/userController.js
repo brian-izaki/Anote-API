@@ -1,8 +1,13 @@
 const User = require("../models/user");
 
 module.exports = {
-  index: (req, res) => {
-    res.send({msg: "rota index"})
+  index: async (req, res) => {
+    try {
+      const users = await User.findAll({});
+      return res.status(200).json(users);
+    } catch (error) {
+      return res.status(500).json({msg: "erro ao buscar usuários"})
+    }
   },
 
   create: async (req, res) => {
@@ -12,7 +17,7 @@ module.exports = {
 
       res.status(201).send({ msg: "Usuário criado com sucesso!" });
     } catch (error) {
-      console.log(error)
+      console.log(error);
       res.status(412).send({ msg: "Erro ao cadastrar usuário" });
     }
   },
