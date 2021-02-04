@@ -1,11 +1,9 @@
 const express = require("express"),
-  routeUser = require("./routes/user"),
-  routeToken = require("./routes/token"),
+  routes = require('./routes'),
   app = express();
 
 app.use(express.json());
-app.use(routeUser);
-app.use(routeToken);
+app.use(routes)
 
 app.listen(3000, () => {
   console.log("servidor iniciado");

@@ -1,8 +1,10 @@
-const { Router } = require("express")
-const controller = require("../controller/index");
+const routes = require("express").Router(),
+  notes = require("./notes"),
+  user = require("./user"),
+  token = require("./token");
 
-const routes = Router();
-
-routes.get('/', controller.inicio)
+routes.use("/", notes);
+routes.use("/", user);
+routes.use("/", token);
 
 module.exports = routes;
