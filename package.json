@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
     "migrate": "npx sequelize-cli db:migrate"
   },
   "repository": {
@@ -27,6 +28,7 @@
     "sequelize": "^6.4.0"
   },
   "devDependencies": {
+    "nodemon": "^2.0.7",
     "sequelize-cli": "^6.2.0"
   }
 }
