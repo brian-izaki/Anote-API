@@ -1,7 +1,7 @@
 module.exports = {
-  jwtSecret: "teste",
+  jwtSecret: 'teste',
   opts: {
-    algorithm: "HS512",
-    expiresIn: "10h",
-  }
-}
+    algorithm: 'HS512',
+    expiresIn: '10h',
+  },
+};

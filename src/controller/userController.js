@@ -1,4 +1,4 @@
-const User = require("../models/user");
+const User = require('../models/user');
 
 module.exports = {
   index: async (req, res) => {
@@ -6,19 +6,18 @@ module.exports = {
       const users = await User.findAll({});
       return res.status(200).json(users);
     } catch (error) {
-      return res.status(500).json({msg: "erro ao buscar usuários"})
+      return res.status(500).json({ msg: 'erro ao buscar usuários' });
     }
   },
 
   create: async (req, res) => {
     try {
-      let { username, password, email } = req.body;
+      const { username, password, email } = req.body;
       await User.create({ username, password, email });
 
-      res.status(201).send({ msg: "Usuário criado com sucesso!" });
+      res.status(201).send({ msg: 'Usuário criado com sucesso!' });
     } catch (error) {
-      console.log(error);
-      res.status(412).send({ msg: "Erro ao cadastrar usuário" });
+      res.status(412).send({ msg: 'Erro ao cadastrar usuário' });
     }
   },
 };

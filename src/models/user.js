@@ -1,7 +1,7 @@
-"use strict";
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../factory/sequelize");
-const bcrypt = require("bcrypt");
+/* eslint-disable no-param-reassign */
+const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
+const sequelize = require('../factory/sequelize');
 
 class User extends Model {
   /**
@@ -9,14 +9,12 @@ class User extends Model {
    * This method is not a part of Sequelize lifecycle.
    * The `models/index` file will call this method automatically.
    */
-  static associate(models) {
+  static associate() {
     // define association here
   }
 
   static async isPassword(pass, encodedPass) {
-    return await bcrypt.compare(pass, encodedPass, (err, result) => {
-      return result;
-    });
+    return bcrypt.compare(pass, encodedPass, (err, result) => result);
   }
 }
 User.init(
@@ -49,7 +47,7 @@ User.init(
       },
     },
     sequelize,
-    modelName: "User",
-  }
+    modelName: 'User',
+  },
 );
 module.exports = User;

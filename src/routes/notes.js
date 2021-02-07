@@ -1,6 +1,6 @@
-const routes = require('express').Router(),
-  controller = require('../controller/notesController'),
-  validateToken = require('../middlewares/validateToken');
+const routes = require('express').Router();
+const controller = require('../controller/notesController');
+const validateToken = require('../middlewares/validateToken');
 
 routes.get('/notes', validateToken, controller.index);
 routes.post('/notes', validateToken, controller.store);
